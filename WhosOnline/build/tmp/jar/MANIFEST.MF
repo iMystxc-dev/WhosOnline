@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: WhosOnline
+Implementation-Version: 1.0.0
+Specification-Vendor: iMystxc
+Specification-Title: whosonline
+Implementation-Timestamp: 2021-06-13T16:34:06-0400
+Specification-Version: 1
+Implementation-Vendor: iMystxc
+

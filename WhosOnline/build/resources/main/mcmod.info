@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "WhosOnline",
+    "name": "WhosOnline",
+    "description": "shows a list of players that are online",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://github.com/iMystxc-dev",
+    "updateUrl": "",
+    "authorList": [
+      "iMystxc"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
