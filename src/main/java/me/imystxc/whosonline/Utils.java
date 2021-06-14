@@ -1,10 +1,13 @@
 package me.imystxc.whosonline;
 
+import ca.landonjw.gooeylibs2.api.UIManager;
 import ca.landonjw.gooeylibs2.api.button.Button;
 import ca.landonjw.gooeylibs2.api.button.GooeyButton;
 import ca.landonjw.gooeylibs2.api.button.linked.LinkType;
 import ca.landonjw.gooeylibs2.api.button.linked.LinkedPageButton;
 import com.pixelmonmod.pixelmon.config.PixelmonItems;
+import com.pixelmonmod.pixelmon.config.PixelmonItemsHeld;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemStack;
@@ -38,6 +41,17 @@ public class Utils {
                 .display((new ItemStack(PixelmonItems.tradeHolderRight)))
                 .title(TextFormatting.DARK_AQUA + ("Next Page"))
                 .linkType(LinkType.Next)
+                .build();
+    }
+
+    public static GooeyButton backButton() {
+        return GooeyButton.builder()
+                .display((new ItemStack(PixelmonItemsHeld.ejectButton)))
+                .title(TextFormatting.RED + ("Back"))
+                .onClick(buttonAction -> {
+                    EntityPlayerMP player = buttonAction.getPlayer();;
+                    UIManager.openUIForcefully(player, MainUI.menu(player));
+                })
                 .build();
     }
 

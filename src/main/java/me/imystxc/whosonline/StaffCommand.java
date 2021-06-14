@@ -1,6 +1,8 @@
 package me.imystxc.whosonline;
 
 import ca.landonjw.gooeylibs2.api.UIManager;
+import net.luckperms.api.LuckPerms;
+import net.luckperms.api.LuckPermsProvider;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
@@ -8,15 +10,17 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.text.TextComponentString;
 
-public class Command extends CommandBase {
+import java.util.UUID;
+
+public class StaffCommand extends CommandBase {
     @Override
     public String getName() {
-        return "online";
+        return "staff";
     }
 
     @Override
     public String getUsage(ICommandSender sender) {
-        return "/online";
+        return "/staff";
     }
 
     @Override
@@ -27,7 +31,9 @@ public class Command extends CommandBase {
                 return;
             }
             EntityPlayerMP player = (EntityPlayerMP) sender;
-            UIManager.openUIForcefully(player, MainUI.menu(player));
+            LuckPerms luckPerms = LuckPermsProvider.get();
+            UUID uuid = UUID.fromString(player.getCachedUniqueIdString());
+            UIManager.openUIForcefully(player, StaffOnlyUI.menu(StaffOnlyUI.getOnlinePlayerButton()));
         }
     }
 }
