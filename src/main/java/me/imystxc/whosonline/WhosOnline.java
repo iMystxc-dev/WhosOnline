@@ -1,5 +1,7 @@
 package me.imystxc.whosonline;
 
+import me.imystxc.whosonline.Commands.Command;
+import me.imystxc.whosonline.Commands.StaffCommand;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
